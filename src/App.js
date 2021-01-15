@@ -11,18 +11,22 @@ import { AddTransaction } from './components/AddTransaction';
 
 // Import Provider
 import { GlobalProvider } from './context/GlobalState';
+import { configNotification } from './services/firebase';
 
 function App() {
+
+  configNotification()
+
   return (
     <GlobalProvider>
-        <Header />
-        <div className="container">
-          <Balance />
-          <AccountSummary />
-          <TransactionHistory />
-          <AddTransaction />
-        </div>
-      </GlobalProvider>
+      <Header />
+      <div className="container">
+        <Balance />
+        <AccountSummary />
+        <TransactionHistory />
+        <AddTransaction />
+      </div>
+    </GlobalProvider>
 
     // <TransactionProvider >
     //   <Child />
